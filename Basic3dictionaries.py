@@ -69,46 +69,83 @@ for key,value in d.items():
    print(key,value,end='') #C 14; A 12; T 9; G 18
 
 
-# In[ ]:
+# In[2]:
 
 
-
-
-
-# In[ ]:
-
-
-
+d={'C':14,'A':12,'T':9,'G':18}
+for key in d:
+    print(key,end='')
 
 
 # In[ ]:
 
 
+def update_dictionary(d, key, value):
+    if key in d:
+        d[key].append(value)
+    elif 2*key in d:
+        d[2*key].append(value)
+    else
+        d[2*key]=[value]
 
+
+# In[9]:
+
+
+a=input().lower().split(' ')
+s=0
+n=a[0]
+for i in a:
+    if n!=i:
+        print(n+str(s), end='\n')
+        s=0
+        n=i
+    s+=1
+
+
+# In[13]:
+
+
+a=input().lower().split(' ')
+m={}
+for i in a:
+    if m.get(i)!=None:
+        m[i]+=1
+    else:
+        m.setdefault(i,1)
+for key, value in m.items():
+    print(key, value)
+
+
+# In[14]:
+
+
+a= input().lower().split()
+for i in set(a):
+    print(i,a.count(i))
+
+
+# In[15]:
+
+
+m={}
+n=int(input())
+for i in range(n):
+    a=int(input())
+    if a not in m:
+        m[a]=f(a)
+    print(m[a])
 
 
 # In[ ]:
 
 
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
+cache = {}
+for _ in range(int(input())):
+    x = int(input())
+    if x not in cache:
+        cache[x] = f(x)
+    print(cache[x])
 
 
 # In[ ]:
